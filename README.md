@@ -1,4 +1,4 @@
-Kafka verstion 4 without zookeeper
+Kafka version 4 without zookeeper
 
 Стадия 1 - создание минимального инстанса. 
 Продюсер в одном сервисе шлёт сообщение в кафку. 
