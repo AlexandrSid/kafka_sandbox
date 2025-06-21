@@ -1,2 +1,8 @@
 server:
   port: 8891
+spring:
+  data:
+    kafka:
+      consumer:
+        properties:
+          spring.json.trusted.packages: '*'

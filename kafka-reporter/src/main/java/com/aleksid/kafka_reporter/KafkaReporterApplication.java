@@ -13,12 +13,4 @@ public class KafkaReporterApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KafkaReporterApplication.class, args);
 	}
-
-	@Bean
-	public CommandLineRunner demo(KafkaProducerService producer) {
-		return args -> {
-			producer.sendMessage("Hello from Publisher at " + LocalDateTime.now());
-		};
-	}
-
 }
