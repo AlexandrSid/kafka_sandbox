@@ -1,12 +1,13 @@
-package com.aleksid.kafka_reporter;
+package com.aleksid.kafka_config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaReporterApplication {
+public class KafkaConfigApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaReporterApplication.class, args);
+		SpringApplication.run(KafkaConfigApplication.class, args);
 	}
+
 }

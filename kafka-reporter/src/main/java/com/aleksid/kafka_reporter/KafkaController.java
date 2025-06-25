@@ -22,19 +22,12 @@ public class KafkaController {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper mapper;
 
-    @GetMapping("/send/{message}")
-    public ResponseEntity<Void> sendCustomMessage(@PathVariable String message) {
-        CompletableFuture<SendResult<String, String>> send = kafkaTemplate.send("test-topic", message);
-        String string = send.join().toString();
-        System.out.println(string);
-        return ResponseEntity.ok().build();
-    }
-
     @GetMapping("/send/goal_complete/{title}")
     public ResponseEntity<Void> sendGoalComplete(@PathVariable String title) throws JsonProcessingException {
         GoalCompletedEvent event = new GoalCompletedEvent(1L, title, List.of(1L, 2L), LocalDateTime.now());
         String json = mapper.writeValueAsString(event);
-        CompletableFuture<SendResult<String, String>> send = kafkaTemplate.send("goal_completed", json);
+        CompletableFuture<SendResult<String, String>> send =
+                kafkaTemplate.send("goal_completed", event.goalId().toString() ,json);
         String string = send.join().toString();
         System.out.println(string);
         return ResponseEntity.ok().build();
