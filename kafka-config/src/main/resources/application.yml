@@ -4,4 +4,12 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
 #    bootstrap-servers: localhost:9092,localhost:9094,localhost:9096 # На стадии 4
+    topics:
+      - name: goal_completed
+        partitions: 3
+        replicas: 1
+      - name: user_subscribe
+        partitions: 3
+        replicas: 1
+
 logging.level.org.apache.kafka.clients.admin: INFO
