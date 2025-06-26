@@ -2,7 +2,7 @@ Kafka version 4 without zookeeper
 
 How to run: 1 - start docker-compose (docker compose up -d).
             2 - Stage3+ run kafka-config app once to create topics.
-            3 - run reporter and listener - user reporter REST endpoints,
+            3 - run reporter and listener - use reporter's REST endpoints,
                 observe operation in reporter's and listener's consoles.
             use kafka-ui at localhost:8880
 
